@@ -89,6 +89,10 @@ Gemini API（Steps 2/3）还需要二选一：
 - **Google AI Studio**：[aistudio.google.com](https://aistudio.google.com) 获取 API key，传给 `--api-key`
 - **Vertex AI**：`gcloud auth application-default login` 配置 ADC，传 `--backend vertex --project YOUR_PROJECT`，不需要 API key
 
+## 准备 Twitter 存档
+
+前往 [Twitter 数据导出页面](https://help.x.com/en/managing-your-account/how-to-download-your-x-archive) 申请数据导出，等邮件通知后下载并解压，将整个目录放到项目根目录下，重命名为 `twitter_archive/`。核心文件是 `twitter_archive/data/tweets.js`。
+
 ## Step 1：解析存档
 
 从 `twitter_archive/data/tweets.js` 读取推文，过滤转推，在存档内解析父推关系，按三路输出：

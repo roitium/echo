@@ -53,7 +53,7 @@ def load_replies_matched() -> list[dict]:
     samples, skipped = [], 0
     for r in records:
         parent = (r.get("parent_text") or "").strip()
-        reply  = clean_reply((r.get("reply_text") or "").strip())
+        reply  = clean_reply((r.get("text") or "").strip())
         if not parent or not is_valid(reply):
             skipped += 1
             continue
